@@ -8,9 +8,12 @@ public class Query {
     public ResultSet setQuery(Connection conn, String query){
         try{
         Statement stmt = conn.createStatement();
-        // get data from table 'student'rs = stmt.executeQuery("select * from CAUTHU");
+        // get data from table 'student'
+            rs = stmt.executeQuery("select * from CAUTHU");
         // show data
+            System.out.println("setQuery successfully");
             return rs;
+
     }
          catch (
     SQLException throwables) {
