@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="506.0" prefWidth="755.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LogIn.NhapKho_C">
+   <children>
+      <TableView fx:id="table" layoutX="-1.0" layoutY="115.0" prefHeight="392.0" prefWidth="538.0">
+        <columns>
+          <TableColumn fx:id="c_MaSP" prefWidth="89.66040277481079" text="Mã Sản phẩm" />
+          <TableColumn fx:id="c_TenSP" prefWidth="86.03775024414062" text="Tên sản phẩm" />
+            <TableColumn fx:id="c_SoLuong" prefWidth="61.58489990234375" text="Số lượng" />
+            <TableColumn fx:id="c_Gia" prefWidth="63.39622497558594" text="Giá Nhập" />
+            <TableColumn fx:id="c_NgayNhap" minWidth="0.0" prefWidth="96.90570068359375" text="Ngày nhập" />
+            <TableColumn fx:id="c_HanSD" prefWidth="75.0" text="Hạn sử dụng" />
+        </columns>
+      </TableView>
+      <TextField fx:id="masp" layoutX="557.0" layoutY="115.0" promptText="Mã Sản Phẩm" />
+      <TextField fx:id="soluong" layoutX="562.0" layoutY="205.0" promptText="Số lượng" />
+      <TextField fx:id="giatien" layoutX="562.0" layoutY="247.0" promptText="Giái tiền" />
+      <TextField fx:id="tensp" layoutX="562.0" layoutY="160.0" promptText="Tên sản phẩm" />
+      <Button fx:id="them" layoutX="570.0" layoutY="431.0" mnemonicParsing="false" onAction="#Add" prefHeight="26.0" prefWidth="61.0" text="Thêm" />
+      <Button layoutX="659.0" layoutY="431.0" mnemonicParsing="false" onAction="#setXoa" text="Xóa" fx:id="xoa" />
+      <Label layoutX="293.0" layoutY="40.0" text="Cập nhật kho hàng">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="back" layoutX="667.0" layoutY="14.0" mnemonicParsing="false" onAction="#setBack" text="Back" />
+      <DatePicker fx:id="time" layoutX="546.0" layoutY="298.0" promptText="Ngày nhập kho" />
+      <DatePicker layoutX="546.0" layoutY="347.0" promptText="Hạn sử dụng" />
+   </children>
+</AnchorPane>
