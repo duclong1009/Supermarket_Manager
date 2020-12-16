@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="416.0" prefWidth="697.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LogIn.LogInSuccess_Controller">
+   <children>
+      <Button fx:id="back" layoutX="391.0" layoutY="274.0" mnemonicParsing="false" onAction="#setBack" text="Đăng xuất" />
+      <ComboBox fx:id="comboBox" layoutY="1.0" onAction="#comboBoxChange" prefHeight="26.0" prefWidth="123.0" promptText="Xem sản phẩm" />
+      <ComboBox layoutX="123.0" layoutY="1.0" prefHeight="26.0" prefWidth="142.0" promptText="Cập nhật sản phẩm" />
+      <ComboBox layoutX="265.0" layoutY="1.0" prefHeight="26.0" prefWidth="123.0" promptText="Xem hóa đơn" />
+      <ComboBox layoutX="388.0" layoutY="1.0" prefHeight="26.0" prefWidth="109.0" promptText="Tạo hóa đơn" />
+      <ComboBox layoutX="498.0" layoutY="1.0" prefHeight="26.0" prefWidth="142.0" promptText="Cập nhật thông tin" />
+   </children>
+</AnchorPane>
