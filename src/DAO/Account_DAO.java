@@ -39,7 +39,7 @@ public class Account_DAO implements  Dao<Account>{
 
     @Override
     public void update(Account entrie) {
-
+        PreparedStatement stmt = conn.prepareStatement("update Account set ")
     }
 
     @Override

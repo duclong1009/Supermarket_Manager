@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="461.0" prefWidth="685.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LogIn.TaoTk_C">
+<AnchorPane prefHeight="461.0" prefWidth="685.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LogIn.QLTK.TaoTk_C">
    <children>
       <TextField fx:id="tendangnhap" layoutX="487.0" layoutY="78.0" promptText="Tên đăng nhập" />
       <TextField fx:id="matkhau" layoutX="487.0" layoutY="125.0" promptText="Mật khẩu" />

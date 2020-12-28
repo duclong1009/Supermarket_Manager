@@ -15,4 +15,6 @@ public interface Dao<T> {
     public void insert(T entrie) throws SQLException;
 
     public void delete(T entrie);
+
+
 }

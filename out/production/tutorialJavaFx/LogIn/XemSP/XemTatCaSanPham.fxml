@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane onDragDetected="#setBack" prefHeight="461.0" prefWidth="702.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LogIn.XemSP.XemTatspController">
+   <children>
+      <Button fx:id="back" layoutX="582.0" layoutY="14.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="75.0" text="Trở về" />
+      <TableView fx:id="table" layoutY="119.0" prefHeight="384.0" prefWidth="491.0">
+        <columns>
+          <TableColumn fx:id="c_masp" prefWidth="92.37738275527954" text="Mã Sản Phẩm " />
+          <TableColumn fx:id="c_tensp" prefWidth="126.79248046875" text="Tên sản phẩm" />
+            <TableColumn fx:id="c_soluong" prefWidth="86.94334411621094" text="Số lượng" />
+            <TableColumn fx:id="c_vitri" prefWidth="54.33966064453125" text="Vị trí" />
+            <TableColumn fx:id="c_hsd" prefWidth="72.45281982421875" text="HSD" />
+            <TableColumn fx:id="c_giaban" prefWidth="58.867919921875" text="Giá" />
+        </columns>
+      </TableView>
+      <TextField fx:id="masp" layoutX="529.0" layoutY="148.0" promptText="Mã sản phẩm" />
+      <TextField fx:id="tsp" layoutX="529.0" layoutY="211.0" promptText="Tên sản phẩm" />
+      <TextField fx:id="giatien" layoutX="529.0" layoutY="276.0" promptText="Giá tiền" />
+      <Button fx:id="tim" layoutX="545.0" layoutY="405.0" mnemonicParsing="false" onAction="#setTim" prefHeight="33.0" prefWidth="102.0" text="Tìm" />
+   </children>
+</AnchorPane>

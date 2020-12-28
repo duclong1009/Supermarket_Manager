@@ -15,7 +15,7 @@ public class Main2 extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("NhapKho.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("QLySP/NhapKho.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.setTitle("Tạo tài khoản");
