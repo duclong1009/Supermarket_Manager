@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="461.0" prefWidth="685.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LogIn.TaoTk_C">
+   <children>
+      <TextField fx:id="tendangnhap" layoutX="487.0" layoutY="78.0" promptText="Tên đăng nhập" />
+      <TextField fx:id="matkhau" layoutX="487.0" layoutY="125.0" promptText="Mật khẩu" />
+      <Button fx:id="taotk" layoutX="465.0" layoutY="409.0" mnemonicParsing="false" onAction="#taoTK" text="Tạo tài khoản" />
+      <Button fx:id="reset" layoutX="589.0" layoutY="409.0" mnemonicParsing="false" onAction="#setXoa" prefHeight="26.0" prefWidth="72.0" text="Xóa" />
+      <Button fx:id="back" layoutX="599.0" layoutY="14.0" mnemonicParsing="false" onAction="#setBack" text="Quay về đi" />
+      <TextField fx:id="hoten" layoutX="487.0" layoutY="177.0" promptText="Họ và tên" />
+      <TextField fx:id="sdt" layoutX="487.0" layoutY="224.0" promptText="Số điện thoại" />
+      <TextField fx:id="manv" layoutX="487.0" layoutY="271.0" promptText="Mã nhân viên" />
+      <Group layoutX="560.0" layoutY="329.0" />
+      <Group layoutX="560.0" layoutY="318.0" />
+      <ComboBox fx:id="chucvu" layoutX="485.0" layoutY="360.0" prefWidth="150.0" promptText="Chức vụ" />
+      <Label fx:id="label" layoutX="298.0" layoutY="26.0" text="Tạo tài khoản" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="table" layoutY="78.0" prefHeight="364.0" prefWidth="442.0">
+        <columns>
+          <TableColumn fx:id="c_manv" prefWidth="64.30188226699829" text="Mã Nhân Viên" />
+          <TableColumn fx:id="c_tendangnhap" prefWidth="91.47171020507812" text="Tên Đăng Nhập" />
+            <TableColumn fx:id="c_mk" prefWidth="62.4906005859375" text="Mật Khẩu" />
+            <TableColumn fx:id="c_tennv" prefWidth="84.22642517089844" text="Tên Nhân viên" />
+            <TableColumn fx:id="c_chucvu" prefWidth="55.2452392578125" text="Chức vụ" />
+            <TableColumn fx:id="c_sdt" prefWidth="81.5093994140625" text="Số điện thoại" />
+        </columns>
+      </TableView>
+      <TextField fx:id="ngay" layoutX="460.0" layoutY="315.0" prefHeight="26.0" prefWidth="49.0" promptText="ngày" />
+      <TextField fx:id="thang" layoutX="521.0" layoutY="315.0" prefHeight="26.0" prefWidth="49.0" promptText="tháng" />
+      <TextField fx:id="nam" layoutX="589.0" layoutY="316.0" prefHeight="26.0" prefWidth="49.0" promptText="năm" />
+   </children>
+</AnchorPane>
