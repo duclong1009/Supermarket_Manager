@@ -2,19 +2,20 @@ package DAO;
 
 import javafx.collections.ObservableList;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
 public interface Dao<T> {
     ObservableList<T> getAll() throws SQLException;
 
-    public void update(T entrie);
+    public void update(T entrie) throws SQLException;
 
-    List<T> getList();
+    ObservableList<T> getList(ResultSet r) throws SQLException;
 
     public void insert(T entrie) throws SQLException;
 
-    public void delete(T entrie);
+    public void delete(T entrie) throws SQLException;
 
 
 }

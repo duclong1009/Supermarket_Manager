@@ -1,5 +1,6 @@
-package LogIn.QLySP;
+package LogIn;
 
+import DAO.SP_Dao;
 import LogIn.windows;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,9 +15,10 @@ import tacnhan.SanPham;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class Xuatkho implements Initializable {
+public class Nhapkho implements Initializable {
     @FXML
     private Label label;
 
@@ -67,8 +69,12 @@ public class Xuatkho implements Initializable {
 
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         spList = FXCollections.observableArrayList();
+        try {
+            spList = new SP_Dao().getAll();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         c_soluong.setCellValueFactory(new PropertyValueFactory<SanPham,Integer>("soLuong"));
         c_masp.setCellValueFactory(new PropertyValueFactory<SanPham,Integer>("maSP"));
         c_ncc.setCellValueFactory(new PropertyValueFactory<SanPham,String>("tenNCC"));
@@ -82,6 +88,7 @@ public class Xuatkho implements Initializable {
     }
 
     public void setThem (ActionEvent event) throws IOException {
+        SP_Dao ss = new SP_Dao();
         SanPham sanPham = new SanPham();
         sanPham.setMaSP(masp.getText());
         sanPham.setTenSP(tsp.getText());
@@ -90,7 +97,13 @@ public class Xuatkho implements Initializable {
         sanPham.setHSD(new Date(Integer.parseInt(n1.getText()),Integer.parseInt(t1.getText()),Integer.parseInt(nam1.getText())));
         sanPham.setNgayNhap(new Date(Integer.parseInt(n2.getText()),Integer.parseInt(t2.getText()),Integer.parseInt(nam2.getText())));
         sanPham.setMaNCC(mncc.getText());
+        sanPham.setVitri("Kho");
         sanPham.setGiaBan(0);
+        try {
+            ss.insert(sanPham);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         spList.add(sanPham);
     }
 

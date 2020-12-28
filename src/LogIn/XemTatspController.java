@@ -1,4 +1,4 @@
-package LogIn.XemSP;
+package LogIn;
 
 import DAO.SP_Dao;
 import LogIn.windows;

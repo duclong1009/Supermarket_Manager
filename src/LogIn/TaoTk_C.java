@@ -1,7 +1,6 @@
-package LogIn.QLTK;
+package LogIn;
 
 import DAO.Account_DAO;
-import LogIn.windows;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -124,8 +123,13 @@ public class TaoTk_C implements Initializable {
     }
 
     public void setXoa(ActionEvent event) throws  IOException {
-
+        Account_DAO d = new Account_DAO();
         Account sp = table.getSelectionModel().getSelectedItem();
+        try {
+            d.delete(sp);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         accountsList.remove(sp);
     }
 

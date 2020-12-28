@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane onDragDetected="#setBack" prefHeight="461.0" prefWidth="702.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LogIn.XemSP.XemTatspController">
+<AnchorPane onDragDetected="#setBack" prefHeight="461.0" prefWidth="702.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LogIn.XemTatspController">
    <children>
       <Button fx:id="back" layoutX="582.0" layoutY="14.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="75.0" text="Trở về" />
       <TableView fx:id="table" layoutY="119.0" prefHeight="384.0" prefWidth="491.0">
