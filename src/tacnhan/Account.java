@@ -3,32 +3,31 @@ package tacnhan;
 import java.sql.Date;
 
 public class Account {
-    private int maNV;
-    private String chucvu;
+    private String maNV;
     private String tenTK;
     private String pass;
     private Date ngaySinh;
     private String ten;
+    private String chucvu;
     private String sdt;
     public Account() {
     }
 
-
-    public Account(int maNV, String chucvu, String tenTK, String pass, Date ngaySinh, String ten, String sdt) {
+    public Account(String maNV, String tenTK, String pass, Date ngaySinh, String ten, String chucvu, String sdt) {
         this.maNV = maNV;
-        this.chucvu = chucvu;
         this.tenTK = tenTK;
         this.pass = pass;
         this.ngaySinh = ngaySinh;
         this.ten = ten;
+        this.chucvu = chucvu;
         this.sdt = sdt;
     }
 
-    public int getMaNV() {
+    public String getMaNV() {
         return maNV;
     }
 
-    public void setMaNV(int maNV) {
+    public void setMaNV(String maNV) {
         this.maNV = maNV;
     }
 

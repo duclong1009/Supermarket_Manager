@@ -1,5 +1,6 @@
 package LogIn;
 
+import DAO.Account_DAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -12,6 +13,8 @@ import tacnhan.Account;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Date;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class TaoTk_C implements Initializable {
@@ -85,8 +88,12 @@ public class TaoTk_C implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         chucvu.setItems(listChucvu);
-
         accountsList = FXCollections.observableArrayList();
+        try {
+            accountsList = new Account_DAO().getAll();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         c_tennv.setCellValueFactory(new PropertyValueFactory<Account,String>("ten"));
         c_mk.setCellValueFactory(new PropertyValueFactory<Account,String>("pass"));
         c_tendangnhap.setCellValueFactory(new PropertyValueFactory<Account,String>("tenTK"));
@@ -96,16 +103,20 @@ public class TaoTk_C implements Initializable {
         table.setItems(accountsList);
     }
     public void taoTK (ActionEvent event) throws IOException {
+        Account_DAO acc = new Account_DAO();
         Account ac = new Account();
         ac.setChucvu(chucvu.getValue());
-        ac.setMaNV(Integer.parseInt(manv.getText()));
-//        ac.setNgay(Integer.parseInt(ngay.getText()));
-//        ac.setThang(Integer.parseInt(thang.getText()));
-//        ac.setNam(Integer.parseInt(nam.getText()));
+        ac.setMaNV(manv.getText());
+        Date tmp = new Date(Integer.parseInt(nam.getText()),Integer.parseInt(thang.getText()),Integer.parseInt(ngay.getText()));
         ac.setPass(matkhau.getText());
         ac.setSdt(sdt.getText());
         ac.setTenTK(tendangnhap.getText());
         ac.setTen(hoten.getText());
+        try {
+            acc.insert(ac);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         accountsList.add(ac);
 
 
