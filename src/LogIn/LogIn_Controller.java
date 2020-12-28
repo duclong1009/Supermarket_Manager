@@ -24,6 +24,9 @@ public class LogIn_Controller {
     public void LogIn (ActionEvent event) throws IOException {
         String taikhoan = Taikhoan.getText();
         String matkhau = Matkhau.getText();
+        // Code kiem tra database
+        //if(true ) switch
+        //else (
               Parent root = FXMLLoader.load(getClass().getResource(("Admin.fxml")));
               Scene sc  = new Scene(root);
               Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();

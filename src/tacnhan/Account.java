@@ -1,21 +1,28 @@
-package LogIn;
+package tacnhan;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Account {
     private int maNV;
     private String chucvu;
     private String tenTK;
     private String pass;
-    private int ngay;
-    private  int thang;
-    private  int nam;
+    private Date ngaySinh;
     private String ten;
-    private int sdt;
+    private String sdt;
     public Account() {
-
     }
 
+
+    public Account(int maNV, String chucvu, String tenTK, String pass, Date ngaySinh, String ten, String sdt) {
+        this.maNV = maNV;
+        this.chucvu = chucvu;
+        this.tenTK = tenTK;
+        this.pass = pass;
+        this.ngaySinh = ngaySinh;
+        this.ten = ten;
+        this.sdt = sdt;
+    }
 
     public int getMaNV() {
         return maNV;
@@ -49,29 +56,12 @@ public class Account {
         this.pass = pass;
     }
 
-
-    public int getNgay() {
-        return ngay;
+    public Date getNgaySinh() {
+        return ngaySinh;
     }
 
-    public void setNgay(int ngay) {
-        this.ngay = ngay;
-    }
-
-    public int getThang() {
-        return thang;
-    }
-
-    public void setThang(int thang) {
-        this.thang = thang;
-    }
-
-    public int getNam() {
-        return nam;
-    }
-
-    public void setNam(int nam) {
-        this.nam = nam;
+    public void setNgaySinh(Date ngaySinh) {
+        this.ngaySinh = ngaySinh;
     }
 
     public String getTen() {
@@ -82,11 +72,11 @@ public class Account {
         this.ten = ten;
     }
 
-    public int getSdt() {
+    public String getSdt() {
         return sdt;
     }
 
-    public void setSdt(int sdt) {
+    public void setSdt(String sdt) {
         this.sdt = sdt;
     }
 }

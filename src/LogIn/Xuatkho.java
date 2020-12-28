@@ -4,10 +4,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import tacnhan.SanPham;
@@ -17,7 +15,10 @@ import java.net.URL;
 import java.sql.Date;
 import java.util.ResourceBundle;
 
-public class XemTatspController {
+public class Xuatkho implements Initializable {
+    @FXML
+    private Label label;
+
     @FXML
     private TableView<SanPham> table;
 
@@ -79,10 +80,28 @@ public class XemTatspController {
 
     }
 
+    public void setThem (ActionEvent event) throws IOException {
+        SanPham sanPham = new SanPham();
+        sanPham.setMaSP(masp.getText());
+        sanPham.setTenSP(tsp.getText());
+        sanPham.setSoLuong(Integer.parseInt(sl.getText()));
+        sanPham.setGiaNhap(Integer.parseInt(gia.getText()));
+        sanPham.setHSD(new Date(Integer.parseInt(n1.getText()),Integer.parseInt(t1.getText()),Integer.parseInt(nam1.getText())));
+        sanPham.setNgayNhap(new Date(Integer.parseInt(n2.getText()),Integer.parseInt(t2.getText()),Integer.parseInt(nam2.getText())));
+        sanPham.setMaNCC(mncc.getText());
+        sanPham.setGiaBan(0);
+        spList.add(sanPham);
+    }
 
-    public void setBack (ActionEvent event)throws IOException {
+    public void setXoa(ActionEvent event) throws  IOException {
+        SanPham sp = table.getSelectionModel().getSelectedItem();
+        spList.remove(sp);
+    }
+
+    public void setBack(ActionEvent event) throws  IOException {
         windows w = new windows();
         Stage window = w.setStage("Admin", event);
         window.show();
     }
+
 }

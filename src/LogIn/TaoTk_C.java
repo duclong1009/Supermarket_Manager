@@ -6,7 +6,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import tacnhan.Account;
 
 import java.io.IOException;
 import java.net.URL;
@@ -33,6 +35,8 @@ public class TaoTk_C implements Initializable {
 
     @FXML
     private TableColumn<Account, String> c_chucvu;
+    @FXML
+    private TableColumn<Account, String> c_sdt;
 
     @FXML
     private TextField tendangnhap;
@@ -81,33 +85,36 @@ public class TaoTk_C implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         chucvu.setItems(listChucvu);
-        accountsList = FXCollections.observableArrayList();
 
-        // chưa liên kết column, table
-//        c_manv.setCellFactory(new PropertyValueFactory<Account,Integer>("Chức vụ"));
-//        c_chucvu.setCellFactory(new PropertyValueFactory<Account,String>("chucvu"));
+        accountsList = FXCollections.observableArrayList();
+        c_tennv.setCellValueFactory(new PropertyValueFactory<Account,String>("ten"));
+        c_mk.setCellValueFactory(new PropertyValueFactory<Account,String>("pass"));
+        c_tendangnhap.setCellValueFactory(new PropertyValueFactory<Account,String>("tenTK"));
+        c_manv.setCellValueFactory(new PropertyValueFactory<Account,Integer>("maNV"));
+        c_chucvu.setCellValueFactory(new PropertyValueFactory<Account,String>("chucvu"));
+        c_sdt.setCellValueFactory(new PropertyValueFactory<Account,String>("sdt"));
+        table.setItems(accountsList);
     }
     public void taoTK (ActionEvent event) throws IOException {
         Account ac = new Account();
         ac.setChucvu(chucvu.getValue());
         ac.setMaNV(Integer.parseInt(manv.getText()));
-        ac.setNgay(Integer.parseInt(ngay.getText()));
-        ac.setThang(Integer.parseInt(thang.getText()));
-        ac.setNam(Integer.parseInt(nam.getText()));
+//        ac.setNgay(Integer.parseInt(ngay.getText()));
+//        ac.setThang(Integer.parseInt(thang.getText()));
+//        ac.setNam(Integer.parseInt(nam.getText()));
         ac.setPass(matkhau.getText());
-        ac.setSdt(Integer.parseInt(sdt.getText()));
+        ac.setSdt(sdt.getText());
         ac.setTenTK(tendangnhap.getText());
         ac.setTen(hoten.getText());
-
-        this.setReset(event);
+        accountsList.add(ac);
 
 
     }
 
-    public void setReset(ActionEvent event) throws  IOException {
-        windows w = new windows();
-        Stage window = w.setStage("TaoTk", event);
-        window.show();
+    public void setXoa(ActionEvent event) throws  IOException {
+
+        Account sp = table.getSelectionModel().getSelectedItem();
+        accountsList.remove(sp);
     }
 
     public void setBack(ActionEvent event) throws  IOException {

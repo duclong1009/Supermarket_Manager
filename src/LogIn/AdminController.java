@@ -4,11 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
@@ -42,7 +38,7 @@ public class AdminController implements Initializable {
     ObservableList<String> list1 = FXCollections.observableArrayList("Xem tất cả sản phẩm","Xem giao hàng","Xem kho","Xem sản phẩm bán gần đây");
     ObservableList<String> list2 = FXCollections.observableArrayList("Nhập kho","Xuất kho","Bán hàng","Giảm giá");
     ObservableList<String> list3 = FXCollections.observableArrayList("Xem hóa đơn bán hàng","Xem hóa đơn xuất kho","Xem hóa đơn nhập kho","Xem danh mục giảm giá");
-    ObservableList<String> list4 = FXCollections.observableArrayList("Tạo hóa đơn bán hàng","Tạo danh mcuj xuất kho","Tạo hóa đơn nhập kho","Tạo danh mục giảm giá");
+    ObservableList<String> list4 = FXCollections.observableArrayList("Tạo hóa đơn bán hàng","Tạo danh mục xuất kho","Tạo hóa đơn nhập kho","Tạo danh mục giảm giá");
     ObservableList<String> list5 = FXCollections.observableArrayList("Cập nhật thông tin tài khoảng nhân viên","Tạo tài khoản nhân viên mới");
     public void setBack (ActionEvent event)throws IOException {
         windows w = new windows();
@@ -76,6 +72,42 @@ public class AdminController implements Initializable {
         hc.put("Cập nhật thông tin tài khoảng nhân viên", "XemTatCaSanPham");
         hc.put("Tạo tài khoản nhân viên mới", "TaoTK");
         String choice = comboBox5.getValue();
+        windows w = new windows();
+        Stage window = w.setStage(hc.get(choice), event);
+        window.show();
+    }
+
+    public void quanlyHH(ActionEvent event) throws IOException {
+        HashMap<String, String> hc = new HashMap<String, String>();
+        hc.put("Nhập kho", "NhapKho");
+        hc.put("Xuất kho", "XuatKho");
+        hc.put("Bán hàng", "XemGiaoHang");
+        hc.put("Giảm giá", "XemTatCaSanPham");
+        String choice = comboBox2.getValue();
+        windows w = new windows();
+        Stage window = w.setStage(hc.get(choice), event);
+        window.show();
+    }
+
+    public void xemDon(ActionEvent event) throws IOException {
+        HashMap<String, String> hc = new HashMap<String, String>();
+        hc.put("Xem hóa đơn bán hàng", "XemTatCaSanPham");
+        hc.put("Xem hóa đơn xuất kho", "XemGiaoHang");
+        hc.put("Xem hóa đơn nhập kho", "XemGiaoHang");
+        hc.put("Xem danh mục giảm giá", "XemTatCaSanPham");
+        String choice = comboBox3.getValue();
+        windows w = new windows();
+        Stage window = w.setStage(hc.get(choice), event);
+        window.show();
+    }
+
+    public void taoDon(ActionEvent event) throws IOException {
+        HashMap<String, String> hc = new HashMap<String, String>();
+        hc.put("Tạo hóa đơn bán hàng", "XemTatCaSanPham");
+        hc.put("Tạo danh mục xuất kho", "XemGiaoHang");
+        hc.put("Tạo hóa đơn nhập kho","XemGiaoHang");
+        hc.put("Tạo danh mục giảm giá", "XemTatCaSanPham");
+        String choice = comboBox4.getValue();
         windows w = new windows();
         Stage window = w.setStage(hc.get(choice), event);
         window.show();

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="517.0" prefWidth="813.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LogIn.Nhapkho">
+    <children>
+        <TableView fx:id="table" layoutX="-1.0" layoutY="103.0" prefHeight="370.0" prefWidth="554.0">
+            <columns>
+                <TableColumn fx:id="c_masp" prefWidth="83.32077264785767" text="Mã Sản Phẩm" />
+                <TableColumn fx:id="c_tensp" prefWidth="88.75473022460938" text="Tên Sản Phẩm" />
+                <TableColumn fx:id="c_ncc" prefWidth="90.56605529785156" text="Nhà Cung Cấp" />
+                <TableColumn fx:id="c_soluong" prefWidth="61.58489990234375" text="Số Lượng" />
+                <TableColumn fx:id="c_gianhap" prefWidth="74.26409912109375" text="Giá nhập" />
+                <TableColumn fx:id="c_hsd" prefWidth="89.66033935546875" text="Hạn sử dụng" />
+                <TableColumn fx:id="c_ngaynhap" prefWidth="62.49061131978203" text="Ngày nhập" />
+            </columns>
+        </TableView>
+        <TextField fx:id="masp" layoutX="589.0" layoutY="124.0" promptText="Mã sản phẩm" />
+        <TextField fx:id="tsp" layoutX="589.0" layoutY="172.0" promptText="Tên sản phẩm" />
+        <TextField fx:id="sl" layoutX="589.0" layoutY="224.0" promptText="Số lượng" />
+        <Label fx:id="label" layoutX="328.0" layoutY="43.0" text="Quản lý xuất kho">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <Button layoutX="623.0" layoutY="386.0" mnemonicParsing="false" onAction="#setThem" prefHeight="35.0" prefWidth="101.0" text="Xuất kho" />
+        <Button layoutX="717.0" layoutY="14.0" mnemonicParsing="false" onAction="#setBack" text="Back" />
+        <Label layoutX="555.0" layoutY="288.0" text="Ngày xuất kho" />
+        <TextField fx:id="n2" layoutX="580.0" layoutY="325.0" prefHeight="26.0" prefWidth="43.0" promptText="Ngày" />
+        <TextField fx:id="t2" layoutX="635.0" layoutY="325.0" prefHeight="26.0" prefWidth="53.0" promptText="Tháng" />
+        <TextField fx:id="nam2" layoutX="710.0" layoutY="325.0" prefHeight="26.0" prefWidth="53.0" promptText="Năm" />
+    </children>
+</AnchorPane>

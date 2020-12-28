@@ -8,9 +8,9 @@
    <children>
       <Button fx:id="back" layoutX="391.0" layoutY="274.0" mnemonicParsing="false" onAction="#setBack" onMouseDragEntered="#setBack" text="Đăng xuất" />
       <ComboBox fx:id="comboBox1" layoutY="1.0" onAction="#comboBoxXemTCSP" prefHeight="26.0" prefWidth="94.0" promptText="Hàng hóa" />
-      <ComboBox fx:id="comboBox2" layoutX="94.0" layoutY="1.0" prefHeight="26.0" prefWidth="137.0" promptText="Quản lý hàng hóa" />
-      <ComboBox fx:id="comboBox3" layoutX="232.0" layoutY="1.0" prefHeight="26.0" prefWidth="113.0" promptText="Xem hóa đơn" />
-      <ComboBox fx:id="comboBox4" layoutX="345.0" layoutY="1.0" prefHeight="26.0" prefWidth="113.0" promptText="Tạo hóa đơn" />
+      <ComboBox fx:id="comboBox2" layoutX="94.0" layoutY="1.0" onAction="#quanlyHH" prefHeight="26.0" prefWidth="137.0" promptText="Quản lý hàng hóa" />
+      <ComboBox fx:id="comboBox3" layoutX="232.0" layoutY="1.0" onAction="#xemDon" prefHeight="26.0" prefWidth="113.0" promptText="Xem hóa đơn" />
+      <ComboBox fx:id="comboBox4" layoutX="345.0" layoutY="1.0" onAction="#taoDon" prefHeight="26.0" prefWidth="113.0" promptText="Tạo hóa đơn" />
       <ComboBox fx:id="comboBox5" layoutX="458.0" layoutY="1.0" onAction="#comboBoxTaoTk" prefHeight="26.0" prefWidth="145.0" promptText="Cập nhật thông tin" />
    </children>
 </AnchorPane>

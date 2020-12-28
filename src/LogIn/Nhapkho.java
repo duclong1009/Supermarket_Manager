@@ -1,13 +1,12 @@
 package LogIn;
 
+import DAO.SP_Dao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import tacnhan.SanPham;
@@ -15,9 +14,13 @@ import tacnhan.SanPham;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class XemTatspController {
+public class Nhapkho implements Initializable {
+    @FXML
+    private Label label;
+
     @FXML
     private TableView<SanPham> table;
 
@@ -65,8 +68,12 @@ public class XemTatspController {
 
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         spList = FXCollections.observableArrayList();
+        try {
+            spList = new SP_Dao().getAll();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         c_soluong.setCellValueFactory(new PropertyValueFactory<SanPham,Integer>("soLuong"));
         c_masp.setCellValueFactory(new PropertyValueFactory<SanPham,Integer>("maSP"));
         c_ncc.setCellValueFactory(new PropertyValueFactory<SanPham,String>("tenNCC"));
@@ -79,10 +86,35 @@ public class XemTatspController {
 
     }
 
+    public void setThem (ActionEvent event) throws IOException {
+        SP_Dao ss = new SP_Dao();
+        SanPham sanPham = new SanPham();
+        sanPham.setMaSP(masp.getText());
+        sanPham.setTenSP(tsp.getText());
+        sanPham.setSoLuong(Integer.parseInt(sl.getText()));
+        sanPham.setGiaNhap(Integer.parseInt(gia.getText()));
+        sanPham.setHSD(new Date(Integer.parseInt(n1.getText()),Integer.parseInt(t1.getText()),Integer.parseInt(nam1.getText())));
+        sanPham.setNgayNhap(new Date(Integer.parseInt(n2.getText()),Integer.parseInt(t2.getText()),Integer.parseInt(nam2.getText())));
+        sanPham.setMaNCC(mncc.getText());
+        sanPham.setVitri("Kho");
+        sanPham.setGiaBan(0);
+        try {
+            ss.insert(sanPham);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        spList.add(sanPham);
+    }
 
-    public void setBack (ActionEvent event)throws IOException {
+    public void setXoa(ActionEvent event) throws  IOException {
+        SanPham sp = table.getSelectionModel().getSelectedItem();
+        spList.remove(sp);
+    }
+
+    public void setBack(ActionEvent event) throws  IOException {
         windows w = new windows();
         Stage window = w.setStage("Admin", event);
         window.show();
     }
+
 }

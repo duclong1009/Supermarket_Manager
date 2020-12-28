@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="back" onDragDetected="#setBack" prefHeight="439.0" prefWidth="673.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LogIn.XemTatspController">
+<AnchorPane fx:id="back" onDragDetected="#setBack" prefHeight="461.0" prefWidth="702.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LogIn.XemTatspController">
    <children>
-      <Button layoutX="510.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" text="Trở về" />
+      <Button layoutX="582.0" layoutY="14.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="75.0" text="Trở về" />
+      <TableView layoutY="119.0" prefHeight="384.0" prefWidth="491.0">
+        <columns>
+          <TableColumn prefWidth="92.37738275527954" text="Mã Sản Phẩm " />
+          <TableColumn prefWidth="126.79248046875" text="Tên sản phẩm" />
+            <TableColumn prefWidth="86.94334411621094" text="Số lượng" />
+            <TableColumn prefWidth="54.33966064453125" text="Vị trí" />
+            <TableColumn prefWidth="72.45281982421875" text="HSD" />
+            <TableColumn prefWidth="58.867919921875" text="Giá" />
+        </columns>
+      </TableView>
+      <TextField layoutX="529.0" layoutY="148.0" promptText="Mã sản phẩm" />
+      <TextField layoutX="529.0" layoutY="211.0" promptText="Tên sản phẩm" />
+      <TextField layoutX="529.0" layoutY="276.0" promptText="Giá tiền" />
+      <TextField layoutX="529.0" layoutY="341.0" promptText="Hạn sử dụng" />
+      <Button layoutX="545.0" layoutY="405.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="102.0" text="Tìm" />
    </children>
 </AnchorPane>
